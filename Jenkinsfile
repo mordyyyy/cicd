@@ -45,7 +45,7 @@ pipeline {
 
         stage('Stop & Remove Old Containers') {
             steps {
-                echo '🛑 Stopping and removing old containers...'
+                echo '🛑 Stopping and removing old containers..'
                 sh """
                     docker-compose --env-file ${ENV_FILE} down -v --remove-orphans || true
                     docker ps -aq | xargs -r docker rm -f || true
